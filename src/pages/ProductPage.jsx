@@ -73,7 +73,7 @@ export default function ProductPage() {
                 <div className="col-md-6">
 
                     <div className="text-center my-5">
-                        <h1 class="text-primary">{product.title} - {product.price}$</h1>
+                        <h2 class="text-primary">{product.title} - {product.price}$</h2>
                         <p className="text-secondary">{product.description}</p>
                         <p className="text-secondary"><b>Brand</b> : {product.brand}</p>
 
