@@ -14,7 +14,9 @@ import AllProducts from './pages/AllProducts'
 
 export default function App() {
 
+  // const [user, setUser] = useState(false)
   const [user, setUser] = useState(true)
+
   return (
     <>
 

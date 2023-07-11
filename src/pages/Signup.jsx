@@ -6,7 +6,24 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 
 function SignUp() {
-  
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    else if(form.checkValidity() === true) {
+      Swal.fire({
+        title: 'Successfully Sign Up!',
+        icon: 'success',
+        confirmButtonText: 'Continue'
+    })
+    }
+    setValidated(true);
+  };
 
   return (
     <div className="container my-5 d-flex justify-content-center align-item-center">
@@ -104,7 +121,7 @@ function SignUp() {
             feedbackType="invalid"
           />
         </Form.Group>
-        <Button onClick={submitReview} type="submit">Submit form</Button>
+        <Button type="submit">Submit form</Button>
       </Form>
     </div>
   );

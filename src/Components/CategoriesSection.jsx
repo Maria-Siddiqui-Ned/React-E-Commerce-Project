@@ -21,15 +21,17 @@ export default function CategoriesSection() {
       <div className="row">
         {
           categories.map((val, key) =>
-            <div className="col-md-3 my-3" key={key} >
+            <div  className="col-md-3 my-3" key={key} >
+              <div className='category'>
               <Link className='text-decoration-none' to={`/products/category/${val}`}>
-                <Card>
-                  <Card.Body>
+                <Card  bg="warning">
+                  <Card.Body >
                     <Card.Title align="center">{val.toUpperCase().replace('-', ' ')}</Card.Title>
                     {/* <Card.Title>{key + 1} - {val.toUpperCase().replace('-', ' ')}</Card.Title> */}
                   </Card.Body>
                 </Card>
               </Link>
+              </div>
             </div>
           )
         }

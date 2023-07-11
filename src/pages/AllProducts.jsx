@@ -16,18 +16,20 @@ export default function AllProducts() {
 
     return (
        
-        <div className="container">
+        <div className="container my-4">
           
             <div className="row">
                 {
                     products.map((val) =>
 
-                        <div className="col-md-3 my-4">
+                        <div className="col-md-3 my-3">
                             <Link className='text-decoration-none' to={`/products/${val.id}`}>
                                 <Card border="primary" bg="dark" text='light'>
-                                    <Card.Img class="object-fit-contain" height={200} variant="top" src={val.thumbnail} />
+                                    <Card.Img class="object-fit-fill" height={200} variant="top" src={val.thumbnail} />
                                     <Card.Body >
-                                        <Card.Title >{val.title} - {val.price}$</Card.Title>
+                                        {/* <Card.Title >{val.title} - {val.price}$</Card.Title> */}
+                                        <Card.Title className='text-truncate' >{val.title}</Card.Title>
+                                        <Card.Title >{val.price}$</Card.Title>
                                         <Card.Text text='primary' className='text-truncate'>{val.description}
                                         </Card.Text>
                                     </Card.Body>
