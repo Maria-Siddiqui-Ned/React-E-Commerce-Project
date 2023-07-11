@@ -1,7 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+// import InputGroup from 'react-bootstrap/InputGroup';
+import Swal from 'sweetalert2'
 
 
 function Login() {
@@ -15,45 +16,54 @@ function Login() {
       event.stopPropagation();
     }
 
+    else if(form.checkValidity() === true) {
+      Swal.fire({
+        title: 'Successfully Logged In!',
+        icon: 'success',
+        confirmButtonText: 'Continue'
+        
+    })
+    }
     setValidated(true);
+   
   };
+     return (
+      <>
+        <div className="container my-5 d-flex justify-content-center align-item-center">
 
-  return (
-    <>
-      <div className="container my-5 d-flex justify-content-center align-item-center">
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <h3>Welcome to Let's Shop! Please login to continue.</h3>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email address" required />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid email address.
+              </Form.Control.Feedback>
+            </Form.Group>
 
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <h3>Welcome to Let's Shop! Please login to continue.</h3>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email address" required />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-            <Form.Control.Feedback type="invalid">
-              Please provide a valid email address.
-            </Form.Control.Feedback>
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Enter Password" required />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid password.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="Remember me" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter Password" required />
-            <Form.Control.Feedback type="invalid">
-              Please provide a valid password.
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Remember me" />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </div>
+        </div>
 
-    </>
+      </>
 
-  );
-}
+    );
+  }
 
-export default Login;
+  export default Login;

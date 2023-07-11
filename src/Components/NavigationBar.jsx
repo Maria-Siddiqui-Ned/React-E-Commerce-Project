@@ -39,7 +39,7 @@ function NavigationBar() {
             </NavDropdown>  */}
 
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
-
+                        {/* <Link to={`/products/category/${product.category}`}>{product.category}</Link> */}
                             <NavDropdown.Item href="#action/3.1">categories.map((val))</NavDropdown.Item>
 
                         </NavDropdown>

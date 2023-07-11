@@ -18,8 +18,8 @@ export default function CategoryPage() {
 
     return (
         
-        <div className="container">
-        <p mt-5><Link to="/">Home</Link>  / <Link to="/products">Products</Link> / {categoryName}</p>
+        <div className="container my-4">
+        <p my-4><Link to="/">Home</Link>  / <Link to="/AllProducts">Products</Link> / {categoryName}</p>
 
             <div className="my-5 text-center">
                 <h1>{categoryName.toUpperCase()}</h1>
@@ -33,9 +33,11 @@ export default function CategoryPage() {
                         <div className="col-md-3 my-4" key={key}>
                             <Link className='text-decoration-none' to={`/products/${val.id}`}>
                                 <Card height={400}  border="primary" bg="dark" text='light'>
-                                    <Card.Img class="object-fit-contain" height={200} variant="top" src={val.thumbnail} />
+                                    <Card.Img class="object-fit-fill" height={200} variant="top" src={val.thumbnail} />
                                     <Card.Body>
-                                        <Card.Title>{val.title} - {val.price}$</Card.Title>
+                                        {/* <Card.Title>{val.title} - {val.price}$</Card.Title> */}
+                                        <Card.Title className='text-truncate'>{val.title}</Card.Title>
+                                        <Card.Title>{val.price}$</Card.Title>
                                         <Card.Text text='primary' className='text-truncate' >{val.description}
                                         </Card.Text>
                                     </Card.Body>
