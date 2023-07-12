@@ -10,6 +10,7 @@ import FooterSection from './Components/FooterSection'
 import CategoryPage from './pages/CategoryPage'
 import ProductPage from './pages/ProductPage'
 import AllProducts from './pages/AllProducts'
+import AllCategories from './pages/AllCategories'
 
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/allproducts" element={<AllProducts />} />
+              <Route path="/allcategories" element={<AllCategories />} />
               <Route path="/products/:productID" element={<ProductPage />} />
               <Route path="/products/category/:categoryName" element={<CategoryPage />} />
               <Route path="*" element={<Page404 />} />
@@ -42,6 +44,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/allcategories" element={<AllCategories />} />
               <Route path="*" element={<Navigate to="/login" replace={true} />} />
             </Routes>
           )
