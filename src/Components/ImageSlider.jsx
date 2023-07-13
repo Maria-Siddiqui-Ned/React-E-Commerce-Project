@@ -24,7 +24,7 @@ function ImageSlider() {
       <Carousel.Item interval={2000}>
         <img height={600}
           className="d-block w-100"
-          src="./src/images/4739023.jpg"
+          src="../src/images/4739023.jpg"
           alt="Second slide"
         />
 
@@ -36,7 +36,7 @@ function ImageSlider() {
       <Carousel.Item interval={2000}>
         <img height={600}
           className="d-block w-100"
-          src="./src/images/Project_44-06.jpg"
+          src="../src/images/Project_44-06.jpg"
           alt="Third slide"
         />
 {/* 

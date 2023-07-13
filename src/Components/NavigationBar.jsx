@@ -3,9 +3,20 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+
 
 function NavigationBar() {
+
+    const [categories, setCategories] = useState([])
+    useEffect(() => {
+        axios.get('https://dummyjson.com/products/categories').then(json => setCategories(json.data))
+
+    }, [])
+
     return (
+
 
         // const [user, setUser] = useState(true)
         //   return (
@@ -22,25 +33,16 @@ function NavigationBar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Link className='nav-link' to="/">Home</Link>
-                        <Link className='nav-link' to="/products">Products</Link>
+                        {/* <Link className='nav-link' to="/products">Products</Link> */}
                         <Link className='nav-link' to="/AllProducts">All Products</Link>
+                        <Link className='nav-link' to="/AllCategories">Categories</Link>
 
-
-                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>  */}
-
-                        <NavDropdown title="Categories" id="basic-nav-dropdown">
-                        {/* <Link to={`/products/category/${product.category}`}>{product.category}</Link> */}
-                            <NavDropdown.Item href="#action/3.1">categories.map((val))</NavDropdown.Item>
+                        <NavDropdown title="Items" id="basic-nav-dropdown">
+                            {categories.map((val, key) => (
+                                <Link to={`/products/category/${val}`}>
+                                    <NavDropdown.Item key={key}>{val}</NavDropdown.Item>
+                                </Link>
+                            ))}
 
                         </NavDropdown>
 

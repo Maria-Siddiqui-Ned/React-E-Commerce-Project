@@ -22,7 +22,7 @@ export default function AllProductsSection() {
                 {
                     products.map((val) =>
 
-                        <div className="col-md-3 my-4">
+                        <div className="col-md-2 my-4">
                             <Link className='text-decoration-none' to={`/products/${val.id}`}>
                                 <Card border="primary" bg="dark" text='light'>
                                     <Card.Img class="object-fit-contain" height={200} variant="top" src={val.thumbnail} />

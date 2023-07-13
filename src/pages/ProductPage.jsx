@@ -76,6 +76,8 @@ export default function ProductPage() {
                         <h2 class="text-primary">{product.title} - {product.price}$</h2>
                         <p className="text-secondary">{product.description}</p>
                         <p className="text-secondary"><b>Brand</b> : {product.brand}</p>
+                        <p className="text-secondary"><b>Discount</b> : {product.discountPercentage} %</p>
+
 
                         {/* <img>{product.thumbnail}</img> */}
 

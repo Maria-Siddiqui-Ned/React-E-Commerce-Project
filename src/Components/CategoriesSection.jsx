@@ -11,6 +11,16 @@ export default function CategoriesSection() {
 
   }, [])
 
+  // const { categoryName } = useParams()
+  // const [products, setProducts] = useState([])
+
+
+  // useEffect(() => {
+  //     axios.get(`https://dummyjson.com/products/category/${categoryName}`).then(json => setProducts(json.data.products))
+
+  // }, [categoryName])
+
+
   return (
     <div className="container">
       <div className="my-5 text-center">
@@ -25,6 +35,7 @@ export default function CategoriesSection() {
               <div className='category'>
               <Link className='text-decoration-none' to={`/products/category/${val}`}>
                 <Card  bg="warning">
+                {/* <Card.Img class="object-fit-fill" height={200} variant="top" src={val.products.category.thumbnail} /> */}
                   <Card.Body >
                     <Card.Title align="center">{val.toUpperCase().replace('-', ' ')}</Card.Title>
                     {/* <Card.Title>{key + 1} - {val.toUpperCase().replace('-', ' ')}</Card.Title> */}
