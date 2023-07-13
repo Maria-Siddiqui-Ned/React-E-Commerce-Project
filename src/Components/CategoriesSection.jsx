@@ -35,7 +35,10 @@ export default function CategoriesSection() {
               <div className='category'>
               <Link className='text-decoration-none' to={`/products/category/${val}`}>
                 <Card  bg="warning">
+<<<<<<< HEAD
                 {/* <Card.Img class="object-fit-fill" height={200} variant="top" src={val.products.category.thumbnail} /> */}
+=======
+>>>>>>> 587a23f6015ac9fbc48a17e9cc7d6cfda6c1dd27
                   <Card.Body >
                     <Card.Title align="center">{val.toUpperCase().replace('-', ' ')}</Card.Title>
                     {/* <Card.Title>{key + 1} - {val.toUpperCase().replace('-', ' ')}</Card.Title> */}

@@ -37,12 +37,31 @@ function NavigationBar() {
                         <Link className='nav-link' to="/AllProducts">All Products</Link>
                         <Link className='nav-link' to="/AllCategories">Categories</Link>
 
+<<<<<<< HEAD
                         <NavDropdown title="Items" id="basic-nav-dropdown">
                             {categories.map((val, key) => (
                                 <Link to={`/products/category/${val}`}>
                                     <NavDropdown.Item key={key}>{val}</NavDropdown.Item>
                                 </Link>
                             ))}
+=======
+
+                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>  */}
+
+                        <NavDropdown title="Categories" id="basic-nav-dropdown">
+                        {/* <Link to={`/products/category/${product.category}`}>{product.category}</Link> */}
+                            <NavDropdown.Item href="#action/3.1">categories.map((val))</NavDropdown.Item>
+>>>>>>> 587a23f6015ac9fbc48a17e9cc7d6cfda6c1dd27
 
                         </NavDropdown>
 
